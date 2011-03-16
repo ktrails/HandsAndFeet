@@ -1,0 +1,30 @@
+/* 
+    Document   : application
+    Created on : Mar 15, 2011, 1:44:24 PM
+    Author     : kyserj
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+.pretty th .current {
+    padding-right: 20px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.pretty th .asc {
+    background-image: url(/images/up_arrow.gif);
+}
+
+.pretty th .desc {
+    background-image: url(/images/down_arrow.gif);
+}
