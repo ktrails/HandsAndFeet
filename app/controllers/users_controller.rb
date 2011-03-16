@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_filter :find_user, :only => [:destroy, :edit, :show, :update]
+
   helper_method :sort_column, :sort_direction
 
   def new
@@ -15,13 +18,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    user.destroy if user
+    @user.destroy if @user
     redirect_to root_url, :notice => "Deleted user!"
   end
 
   def edit
-    @user = User.find(params[:id])
     respond_to do | format |
       format.html # edit.html.erb
       format.xml { render :xml => @user }
@@ -37,7 +38,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       redirect_to(@user, :notice => 'Updated user')
     else
@@ -46,12 +46,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.xml { render :xml => @user }
     end
   end
+
+  protected
+    def find_user
+      @user = User.find(params[:id])
+    end
 
   private
 

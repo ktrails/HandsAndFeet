@@ -32,3 +32,5 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # end
 
 gem 'will_paginate', '3.0.pre2'
+
+gem "simplecov", :require => false, :group => :test

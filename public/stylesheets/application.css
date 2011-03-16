@@ -11,14 +11,27 @@
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 
+/*
 root { 
     display: block;
 }
+*/
+
+table.pretty {
+    border-collapse: collapse;
+}
+
+.pretty td, .pretty th {
+    padding: 4px 10px;
+}
+/*
+    border: solid 1px #AAA;
+*/
 
 .pretty th .current {
-    padding-right: 20px;
+    padding-right: 16px;
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: right top;
 }
 
 .pretty th .asc {

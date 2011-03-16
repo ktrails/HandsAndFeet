@@ -10,12 +10,14 @@
   </p>
 <% end %>
 
-<table class="pretty"">
+<table class="pretty">
   <tr>
-    <th><%= sortable "firstname", "First " %></th>
-    <th><%= sortable "lastname", "Last " %></th>
-    <th><%= sortable "email", "Email " %></th>
-    <th></th><th></th><th></th>
+    <th><%= sortable "firstname", "First" %></th>
+    <th><%= sortable "lastname", "Last" %></th>
+    <th><%= sortable "email", "Email" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 	
   <% @users.each do |user| %>
