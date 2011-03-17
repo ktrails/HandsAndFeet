@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
         return true
     end
   end
-    
+
   private
 
   def current_user

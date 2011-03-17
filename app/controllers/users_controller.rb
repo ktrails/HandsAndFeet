@@ -2,9 +2,10 @@
 #  new/create, edit/update, destroy, view (one), and index (all)
 class UsersController < ApplicationController
 
+  # before_filters: order matters!
   before_filter :logged_in?, :except => [:new]
-
   before_filter :find_user, :only => [:destroy, :edit, :show, :update]
+  before_filter :format_response, :only => [:edit, :show]
 
   helper_method :sort_column, :sort_direction
 
@@ -26,11 +27,8 @@ class UsersController < ApplicationController
     redirect_to root_url, :notice => "Deleted user!"
   end
 
+  # edit before_filters: logged_in?, find_user, format_response
   def edit
-    respond_to do | format |
-      format.html # edit.html.erb
-      format.xml { render :xml => @user }
-    end
   end
 
   def index
@@ -41,6 +39,10 @@ class UsersController < ApplicationController
     end
   end
 
+  # show before_filters: logged_in?, find_user, format_response
+  def show
+  end
+
   def update
     if @user.update_attributes(params[:user])
       redirect_to(@user, :notice => 'Updated user')
@@ -49,16 +51,16 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml { render :xml => @user }
-    end
-  end
-
   protected
     def find_user
       @user = User.find(params[:id])
+    end
+    
+    def format_response
+      respond_to do |format|
+        format.html # use corresponding .html.erb file
+        format.xml { render :xml => @user }
+      end
     end
 
   private
