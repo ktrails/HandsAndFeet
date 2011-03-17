@@ -1,3 +1,5 @@
+# The User model maintains state required to identify a user: first/last name,
+#   email address, password information
 class User < ActiveRecord::Base
   attr_accessible :firstname, :lastname, :email, :password, :password_confirmation
 

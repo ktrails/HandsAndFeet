@@ -1,7 +1,11 @@
+# Session controller handles association of user id with login session
 class SessionsController < ApplicationController
+
+  before_filter :logged_in?, :except => [:new, :create]
+
   def new
   end
-
+  
   def create
     user = User.authenticate(params[:email], params[:password])
     if user

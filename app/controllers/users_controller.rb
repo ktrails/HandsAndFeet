@@ -1,4 +1,8 @@
+# Users controller handles logic associated with managing users:
+#  new/create, edit/update, destroy, view (one), and index (all)
 class UsersController < ApplicationController
+
+  before_filter :logged_in?, :except => [:new]
 
   before_filter :find_user, :only => [:destroy, :edit, :show, :update]
 
