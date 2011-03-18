@@ -24,7 +24,10 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy if @user
-    redirect_to root_url, :notice => "Deleted user!"
+    respond_to do |format|
+      format.html { redirect_to users_url, :notice => "Deleted user!" }
+      format.xml  { head :ok }
+    end
   end
 
   # edit before_filters: logged_in?, find_user, format_response
@@ -32,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.order(sort_column + " " + sort_direction).search(params[:search]).paginate(:per_page => 4, :page => params[:page])
+    @users = User.order(sort_column + " " + sort_direction).search(params[:search]).paginate(:per_page => 8, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render :xml => @users }
@@ -44,10 +47,17 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(params[:user])
-      redirect_to(@user, :notice => 'Updated user')
-    else
-      render :action => "edit"
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html { redirect_to(@user,
+                      :notice => 'Updated user') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @user.errors,
+                      :status => :unprocessable_entity }
+
+      end
     end
   end
 

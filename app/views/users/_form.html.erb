@@ -3,7 +3,7 @@
     <div class="error_messages">
       <h2>Form is invalid</h2>
       <ul>
-        <% for @user.errors.full_messages.each do |msg| %>
+        <% @user.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>

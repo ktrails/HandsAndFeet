@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # destroy has before_filter: logged_in?
   def destroy
     session[:user_id] = nil
     redirect_to root_url, :notice => "Logged out!"
