@@ -7,7 +7,9 @@ HandsAndFeet::Application.routes.draw do
 
   root :to => "sessions#new"
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :sessions
   resources :users
 end
