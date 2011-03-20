@@ -78,16 +78,16 @@ class PostsController < ApplicationController
 
   protected
 
-    def find_post
-      @post = Post.find(params[:id])
-    end
+  def find_post
+    @post = Post.find(params[:id])
+  end
 
-    def format_response
-      respond_to do |format|
-        format.html # use corresponding .html.erb file
-        format.xml { render :xml => @post }
-      end
+  def format_response
+    respond_to do |format|
+      format.html # use corresponding .html.erb file
+      format.xml { render :xml => @post }
     end
+  end
 
   private
 
