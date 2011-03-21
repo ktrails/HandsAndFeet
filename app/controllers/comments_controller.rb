@@ -19,14 +19,16 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = Comment.find(params[:id])
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
   end
 
   def show
   end
 
   def update
-    @comment = Comment.find(params[:id])
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
     if @comment.update_attributes(params[:comment])
       flash[:notice] = "Successfully updated comment."
       redirect_to posts_path
