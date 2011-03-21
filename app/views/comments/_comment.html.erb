@@ -7,7 +7,7 @@
   <%= comment.body %>
 </p>
 <p>
-  <% if session[:comment_ids] && session[:comment_ids].include?(comment.id) %>
+  <% if user_session.can_edit_comment? comment %>
     <%= link_to 'edit', edit_post_comment_path(@post, comment) %>
   <% end %>
   <%= link_to 'delete', [@post, comment],
