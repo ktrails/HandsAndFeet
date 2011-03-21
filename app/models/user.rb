@@ -7,12 +7,13 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
 
   validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
 
-  validates_presence_of :firstname
-  validates_presence_of :lastname
-  validates_presence_of :email
+  validates :firstname, :presence => true
+  validates :lastname,  :presence => true
+  validates :email,     :presence => true
   validates_uniqueness_of :email
+  validates :password,  :presence => true,
+                        :on => :create
 
   def self.authenticate(email, password)
     user = find_by_email(email)

@@ -1,22 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-no_name:
-  title: MyTitle
-  content: MyContent
-
-no_title:
-  name: MyName
-  content: MyContent
-
-no_content:
-  name: MyName
-  title: MyTitle
-
-short_title:
-  name: MyName
-  title: Tiny
-  content: MyContent
-
 good:
   name: MyName
   title: MyTitle

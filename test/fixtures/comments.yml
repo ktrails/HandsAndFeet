@@ -1,18 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-no_commenter:
-  body: MyBody
-  post: 
-
-no_body:
-  commenter: MyCommenter
-  post:
-
-good:
-  commenter: MyCommenter
-  body: MyBody
-  post:
-
 belongs_to_one:
   id: 1
   commenter: MyCommenter
