@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_filter :logged_in?, :except => [:index, :show]
   before_filter :find_post, :only => [:destroy, :edit, :show, :update]
   before_filter :format_response, :only => [:edit, :show]
-  
+
   helper_method :sort_column, :sort_direction
 
   def new
