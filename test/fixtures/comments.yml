@@ -1,11 +1,32 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  commenter: MyString
-  body: MyText
+no_commenter:
+  body: MyBody
   post: 
 
-two:
-  commenter: MyString
-  body: MyText
-  post: 
+no_body:
+  commenter: MyCommenter
+  post:
+
+good:
+  commenter: MyCommenter
+  body: MyBody
+  post:
+
+belongs_to_one:
+  id: 1
+  commenter: MyCommenter
+  body: MyBody
+  post_id: 1
+
+belongs_to_two:
+  id: 2
+  commenter: MyCommenter
+  body: MyBody
+  post_id: 2
+
+belongs_to_two_too:
+  id: 3
+  commenter: MyCommenter
+  body: MyBody
+  post_id: 2

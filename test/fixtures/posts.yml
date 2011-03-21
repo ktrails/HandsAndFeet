@@ -1,11 +1,35 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  title: MyString
-  content: MyText
+no_name:
+  title: MyTitle
+  content: MyContent
 
-two:
-  name: MyString
-  title: MyString
-  content: MyText
+no_title:
+  name: MyName
+  content: MyContent
+
+no_content:
+  name: MyName
+  title: MyTitle
+
+short_title:
+  name: MyName
+  title: Tiny
+  content: MyContent
+
+good:
+  name: MyName
+  title: MyTitle
+  content: MyContent
+
+post_with_comment:
+  id: 1
+  name: PostWithComment
+  title: MyTitle
+  content: MyContent
+
+post_with_comments:
+  id: 2
+  name: PostWithComments
+  title: MyTitle
+  content: MyContent
