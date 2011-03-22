@@ -5,8 +5,12 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def current_user
+    @user_session.current_user
+  end
+
   def logged_in?
-    unless current_user
+    unless user_session.current_user
       flash[:notice] = "You need to log in first."
         redirect_to root_url
         return false
@@ -17,12 +21,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
   def user_session
     @user_session ||= UserSession.new(session)
   end
   helper_method :user_session
+
 end
