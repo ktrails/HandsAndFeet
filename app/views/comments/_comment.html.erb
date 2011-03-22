@@ -8,9 +8,9 @@
 </p>
 <p>
   <% if user_session.can_edit_comment? comment %>
-    <%= link_to 'edit', edit_post_comment_path(@post, comment) %>
+    <%= link_to 'edit', edit_post_comment_path(comment.post, comment) %>
   <% end %>
-  <%= link_to 'delete', [@post, comment],
+  <%= link_to 'delete', [comment.post, comment],
               :confirm => 'Are you sure?',
               :method => :delete %>
 </p>
