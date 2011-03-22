@@ -1,24 +1,13 @@
-<h1>Show post</h1>
-
 <p class="notice"><%= notice %></p>
-<p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
+<h1><%= @post.title %></h1>
+<p><i>by <%= @post.name %></i></p>
+<p><%= @post.content %></p>
 
-<h2>Comments</h2>
+<h2><%= pluralize @post.comments.count, 'comment' %></h2>
 <%= render :partial => "comments/comment",
            :collection => @post.comments %>
 
-<h2>Add a comment:</h2>
+<h3>Add your comment:</h3>
 <%= render "comments/form" %>
 
 <br />
