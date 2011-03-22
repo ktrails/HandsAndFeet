@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate(params[:email], params[:password])
     if user
-      user_session.set_current_user(user.id)
+      user_session.current_user = user.id
       redirect_to users_path, :notice => "Logged in!"
     else
       flash.now.alert = "Invalid email or password"
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   # destroy has before_filter: logged_in?
   def destroy
-    user_session.set_current_user(nil)
+    user_session.current_user = nil
     redirect_to root_url, :notice => "Logged out!"
   end
 end
