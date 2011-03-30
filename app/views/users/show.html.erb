@@ -3,12 +3,12 @@
 <p class="notice"><%= notice %></p>
 <p>
   <b>Name:</b>
-  <%= @user.firstname %>&nbsp;<%= @user.lastname %>
+  <%= user.firstname %>&nbsp;<%= user.lastname %>
 </p>
 <p>
   <b>Email:</b>
-  <%= @user.email %>
+  <%= user.email %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(user) %> |
 <%= link_to 'Back', users_path %>
