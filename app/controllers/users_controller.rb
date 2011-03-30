@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # edit before_filters: logged_in?, find_user, format_response
+  # edit before_filters: logged_in?, format_response
   def edit
   end
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # show before_filters: logged_in?, find_user, format_response
+  # show before_filters: logged_in?, format_response
   def show
   end
 
