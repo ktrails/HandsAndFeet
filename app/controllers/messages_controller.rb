@@ -8,9 +8,5 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(params[:message])
-    respond_to do |format|
-      format.html { redirect_to :action => 'index' }
-      format.js
-    end
   end
 end
