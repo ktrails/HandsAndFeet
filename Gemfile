@@ -22,3 +22,9 @@ gem 'metrical'
 
 # Adds a simple coverage analysis instead of rcov, not supported by 1.9
 gem "simplecov", :require => false, :group => :test
+
+# Add jQuery to do AJAX
+gem 'jquery-rails'
+
+# Add faye to do broadcasting
+gem 'faye'
