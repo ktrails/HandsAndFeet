@@ -25,5 +25,12 @@
 <%= content_tag :h1, yield(:title) if show_title? %>
 <%= yield %>
 
+<div id="user_nav">
+  <br />
+  <%= link_to "Users", users_path %> |
+  <%= link_to "Posts", posts_path %> |
+  <%= link_to "Chat",  messages_path %>
+</div>
+
 </body>
 </html>

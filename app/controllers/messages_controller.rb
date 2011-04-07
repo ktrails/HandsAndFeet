@@ -1,3 +1,4 @@
+# This class represents the controller for chat messages
 class MessagesController < ApplicationController
 
   before_filter :logged_in?

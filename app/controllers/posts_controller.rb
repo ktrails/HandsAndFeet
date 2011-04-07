@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   # destroy uses before filter
   def destroy
     post.destroy if post
- 
+
     respond_to do |format|
       format.html { redirect_to posts_url, :notice => "Deleted post!" }
       format.xml  { head :ok }
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   def show
   end
 
-  # update uses before filter 
+  # update uses before filter
   def update
     respond_to do |format|
       if post.update_attributes(params[:post])
@@ -64,7 +64,6 @@ class PostsController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => post.errors,
                       :status => :unprocessable_entity }
-    
       end
     end
   end
