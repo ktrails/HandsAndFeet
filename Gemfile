@@ -28,3 +28,14 @@ gem 'jquery-rails'
 
 # Add faye to do broadcasting
 gem 'faye'
+
+# Add Ryan Bates' nifty generators
+gem 'nifty-generators'
+
+# Add rspec for testing (episode 257)
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+end
