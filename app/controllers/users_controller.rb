@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
 
   # before_filters: order matters!
-  before_filter :logged_in?, :except => [:new]
+  before_filter :logged_in?, :except => [:new, :create]
   before_filter :format_response, :only => [:edit, :show]
 
   helper_method :sort_column, :sort_direction
