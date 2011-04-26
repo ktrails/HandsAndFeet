@@ -4,7 +4,7 @@ describe "Posts" do
 
   describe "GET /posts" do
     it "should list posts" do
-      visit posts_path
+      visit "posts"
       page.should have_content("List Posts")
     end
   end
